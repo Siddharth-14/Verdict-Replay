@@ -25,7 +25,7 @@ export function OrphanTable({ orphans }: { orphans: Orphan[] }) {
                   <td>{fmtClock(o.completedAt)}</td>
                   <td><code>{o.checkRunId}</code></td>
                   <td>{o.result}</td>
-                  <td>{o.flagged ? "FAIL never saved: no rule can see it" : "none"}</td>
+                  <td>{o.flagged ? "Fail, never saved: no rule can see it" : "None"}</td>
                 </tr>
               ))}
             </tbody>

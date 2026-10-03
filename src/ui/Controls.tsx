@@ -1,6 +1,12 @@
 import { useRef, type KeyboardEvent } from "react";
 import type { Scenario } from "../sim/types";
 
+const TAB_HINT: Record<string, string> = {
+  "scenario-1": "Order and ties",
+  "scenario-2": "Old snapshots",
+  "scenario-3": "Lost runs",
+};
+
 interface Props {
   scenarios: Scenario[];
   selectedId: string;
@@ -43,7 +49,11 @@ export function Controls({ scenarios, selectedId, onSelect, freshnessHours, onFr
             onClick={() => onSelect(s.id)}
             onKeyDown={(e) => onKeyDown(e, i)}
           >
-            <span className="tab-num">{i + 1}</span> {s.title}
+            <span className="tab-num">{i + 1}</span>
+            <span className="tab-text">
+              <span className="tab-title">{s.title}</span>
+              <span className="tab-hint">{TAB_HINT[s.id]}</span>
+            </span>
           </button>
         ))}
       </div>
@@ -51,7 +61,7 @@ export function Controls({ scenarios, selectedId, onSelect, freshnessHours, onFr
       <div className="control-row">
         <div className="slider">
           <label htmlFor="freshness">
-            Freshness limit (rule C): <strong>{freshnessHours} h</strong>
+            Freshness limit <span className="muted">(rule C only)</span>: <strong>{freshnessHours} h</strong>
           </label>
           <input
             id="freshness"
@@ -69,7 +79,7 @@ export function Controls({ scenarios, selectedId, onSelect, freshnessHours, onFr
           </div>
         </div>
         <button type="button" className="btn" onClick={onExport}>
-          Export fixtures (JSON)
+          <span aria-hidden="true">↓</span> Export fixtures (JSON)
         </button>
       </div>
     </div>

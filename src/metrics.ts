@@ -223,6 +223,8 @@ export interface Analysis {
   orderA: OrderDependence;
   orderB: OrderDependence;
   orphans: Orphan[];
+  /** Minutes where two or more persisted runs complete together. */
+  tieMinutes: number[];
 }
 
 /** Everything that doesn't depend on the freshness slider. */
@@ -238,6 +240,7 @@ export function analyze(scenario: Scenario): Analysis {
     orderA: orderDependence(lastWins, scenario),
     orderB: orderDependence(latestPerCheck, scenario),
     orphans: orphans(scenario),
+    tieMinutes: tieGroups(scenario.runs).map((g) => scenario.runs[g[0]].completedAt),
   };
 }
 

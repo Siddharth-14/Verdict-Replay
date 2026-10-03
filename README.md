@@ -1,6 +1,6 @@
 # Verdict Replay
 
-**Live demo:** _not deployed yet. Put the Vercel URL here after the first deploy (steps below)._
+**Live demo:** https://verdict-replay.vercel.app/
 
 A static browser demo that compares three ways to derive the status of one compliance evidence task from several checks, replayed over a simulated 90-day SOC 2 observation window. Everything is synthetic. There is no backend, account, paid API, analytics or runtime network call.
 
@@ -31,6 +31,13 @@ Scenarios (fixed seeds, committed as `fixtures/*.json`):
 3. **Run id returned, run not saved.** About 6% of runs have `persisted=false` but still appear in the API log. All rules see only persisted runs.
 
 Metrics: flips, false-green hours (A done while B failed), order dependence (200 seeded shuffles of same-minute runs; "distinct outcomes" counts distinct status vectors held right after each tied minute), stale days, and orphans (API log entries with no persisted run; logged `fail` orphans are flagged).
+
+## Reading the page
+
+- The big number is **false-green time**: hours where rule A said done while rule B said failed.
+- Hover, tap, or use the arrow keys on the timelines to read the same moment in all three rules. Shift+arrow jumps 10 days.
+- Red diamonds under rule A mark same-minute completions, the moments where input order decides the answer.
+- Colors follow a validated palette. "Done" is aqua rather than green so it stays distinct from "failed" for red-green color blindness. Every state also has a text label, and each timeline has a text version.
 
 ## Choices worth knowing about
 
@@ -63,5 +70,4 @@ Static build, no API keys, no cold start (unlike a sleeping Streamlit app, scena
 
 1. Push to a public GitHub repo.
 2. Import it in Vercel. Framework preset: Vite. Build command `npm run build`, output `dist`.
-3. Deploy, then open the URL in a private window and confirm scenario 1 renders with no interaction and the network tab shows only the page's own HTML, JS and CSS.
-4. Replace the placeholder at the top of this README with the URL.
+3. Deploy, then open the URL in a private window and confirm scenario 1 renders with no interaction and the network tab shows only the page's own HTML, JS and CSS. (Done for the URL above.)

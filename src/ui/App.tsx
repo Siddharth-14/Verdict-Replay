@@ -7,6 +7,7 @@ import s1 from "../../fixtures/scenario-1.json";
 import s2 from "../../fixtures/scenario-2.json";
 import s3 from "../../fixtures/scenario-3.json";
 import { Controls } from "./Controls";
+import { insights } from "./insights";
 import { MetricCards } from "./MetricCards";
 import { OrphanTable } from "./OrphanTable";
 import { Timeline } from "./Timeline";
@@ -42,15 +43,28 @@ export function App() {
 
   const analysis = useMemo(() => analysisFor(scenario), [scenario]);
   const view = useMemo(() => windowView(scenario, freshnessHours * 60), [scenario, freshnessHours]);
+  const notes = useMemo(() => insights(scenario, analysis), [scenario, analysis]);
 
   return (
     <div className="page">
-      <header>
+      <header className="masthead">
+        <p className="eyebrow">SOC 2 observation window · 90 synthetic days</p>
         <h1>Verdict Replay</h1>
         <p className="lede">
-          One compliance task, several checks, 90 synthetic days: see how three ways of deriving the task
-          status disagree about the same evidence.
+          One compliance task, several checks. Watch three ways of deriving the task status disagree about the
+          same evidence.
         </p>
+        <ul className="chips">
+          <li>Synthetic data</li>
+          <li>No network calls</li>
+          <li>No AI</li>
+          <li>
+            Models{" "}
+            <a href="https://github.com/trycompai/comp/issues/3541" target="_blank" rel="noreferrer">
+              a public GitHub issue
+            </a>
+          </li>
+        </ul>
       </header>
 
       <Controls
@@ -63,22 +77,34 @@ export function App() {
       />
 
       <main id="scenario-panel" role="tabpanel" aria-labelledby={`tab-${scenario.id}`}>
-        <section className="card" aria-labelledby="scenario-h">
+        <section className="scenario" aria-labelledby="scenario-h">
           <h2 id="scenario-h">{scenario.title}</h2>
-          <p>{scenario.blurb}</p>
-          <p className="checks">
-            Required checks:{" "}
-            {scenario.task.requiredCheckIds
-              .map((id) => {
-                const c = scenario.checks.find((x) => x.id === id);
-                return `${id} (${c?.name ?? id}, ${c?.cadence ?? ""})`;
-              })
-              .join("; ")}
-          </p>
+          <p className="blurb">{scenario.blurb}</p>
+          <ul className="check-list" aria-label="Required checks">
+            {scenario.task.requiredCheckIds.map((id) => {
+              const c = scenario.checks.find((x) => x.id === id);
+              return (
+                <li key={id}>
+                  <span className="check-id">{id}</span>
+                  <span>
+                    {c?.name ?? id}
+                    <span className="muted"> · {c?.cadence}</span>
+                  </span>
+                </li>
+              );
+            })}
+          </ul>
         </section>
 
-        <MetricCards analysis={analysis} view={view} freshnessHours={freshnessHours} />
-        <Timeline scenario={scenario} timelineA={analysis.timelineA} timelineB={analysis.timelineB} view={view} />
+        <MetricCards analysis={analysis} view={view} freshnessHours={freshnessHours} notes={notes} />
+        <Timeline
+          scenario={scenario}
+          timelineA={analysis.timelineA}
+          timelineB={analysis.timelineB}
+          view={view}
+          tieMinutes={analysis.tieMinutes}
+          orphans={analysis.orphans}
+        />
         <OrphanTable orphans={analysis.orphans} />
 
         <div className="two-col">
@@ -105,7 +131,12 @@ export function App() {
       </main>
 
       <footer>
-        Independent demo. Models behavior described in a public GitHub issue. Synthetic data.
+        <p>Independent demo. Models behavior described in a public GitHub issue. Synthetic data.</p>
+        <p>
+          <a href="https://github.com/Siddharth-14/Verdict-Replay" target="_blank" rel="noreferrer">
+            Source on GitHub
+          </a>
+        </p>
       </footer>
     </div>
   );
