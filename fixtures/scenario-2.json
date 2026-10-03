@@ -1,0 +1,2733 @@
+{
+  "id": "scenario-2",
+  "title": "Stale snapshot",
+  "blurb": "The scan runs daily against a provider snapshot that is 36 hours old. A real fix lands on day 40, but the check keeps reporting fail until day 42. A break on day 60 reads as pass until day 62. Slide the freshness limit to see how much of the evidence is old.",
+  "windowStart": 0,
+  "windowEnd": 129600,
+  "checks": [
+    {
+      "id": "V",
+      "name": "Vulnerability scan (scanner-style)",
+      "provider": "scanner",
+      "cadence": "daily, 36h-old snapshot"
+    },
+    {
+      "id": "K",
+      "name": "Branch protection (GitHub-style)",
+      "provider": "github",
+      "cadence": "daily"
+    }
+  ],
+  "task": {
+    "id": "task-scenario-2",
+    "requiredCheckIds": [
+      "V",
+      "K"
+    ],
+    "exceptions": []
+  },
+  "runs": [
+    {
+      "id": "run-v-001",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 20,
+      "completedAt": 30,
+      "result": "pass",
+      "snapshotAsOf": -2130,
+      "persisted": true
+    },
+    {
+      "id": "run-k-001",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 496,
+      "completedAt": 499,
+      "result": "pass",
+      "snapshotAsOf": 498,
+      "persisted": true
+    },
+    {
+      "id": "run-v-002",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 1469,
+      "completedAt": 1480,
+      "result": "pass",
+      "snapshotAsOf": -680,
+      "persisted": true
+    },
+    {
+      "id": "run-k-002",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 1931,
+      "completedAt": 1934,
+      "result": "pass",
+      "snapshotAsOf": 1933,
+      "persisted": true
+    },
+    {
+      "id": "run-v-003",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 2893,
+      "completedAt": 2904,
+      "result": "pass",
+      "snapshotAsOf": 744,
+      "persisted": true
+    },
+    {
+      "id": "run-k-003",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 3366,
+      "completedAt": 3371,
+      "result": "pass",
+      "snapshotAsOf": 3370,
+      "persisted": true
+    },
+    {
+      "id": "run-v-004",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 4355,
+      "completedAt": 4362,
+      "result": "pass",
+      "snapshotAsOf": 2202,
+      "persisted": true
+    },
+    {
+      "id": "run-k-004",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 4804,
+      "completedAt": 4808,
+      "result": "pass",
+      "snapshotAsOf": 4807,
+      "persisted": true
+    },
+    {
+      "id": "run-v-005",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 5781,
+      "completedAt": 5791,
+      "result": "pass",
+      "snapshotAsOf": 3631,
+      "persisted": true
+    },
+    {
+      "id": "run-k-005",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 6241,
+      "completedAt": 6246,
+      "result": "pass",
+      "snapshotAsOf": 6245,
+      "persisted": true
+    },
+    {
+      "id": "run-v-006",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 7211,
+      "completedAt": 7223,
+      "result": "pass",
+      "snapshotAsOf": 5063,
+      "persisted": true
+    },
+    {
+      "id": "run-k-006",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 7685,
+      "completedAt": 7687,
+      "result": "pass",
+      "snapshotAsOf": 7686,
+      "persisted": true
+    },
+    {
+      "id": "run-v-007",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 8679,
+      "completedAt": 8683,
+      "result": "pass",
+      "snapshotAsOf": 6523,
+      "persisted": true
+    },
+    {
+      "id": "run-k-007",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 9139,
+      "completedAt": 9142,
+      "result": "pass",
+      "snapshotAsOf": 9141,
+      "persisted": true
+    },
+    {
+      "id": "run-v-008",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 10097,
+      "completedAt": 10109,
+      "result": "pass",
+      "snapshotAsOf": 7949,
+      "persisted": true
+    },
+    {
+      "id": "run-k-008",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 10570,
+      "completedAt": 10573,
+      "result": "pass",
+      "snapshotAsOf": 10572,
+      "persisted": true
+    },
+    {
+      "id": "run-v-009",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 11546,
+      "completedAt": 11550,
+      "result": "pass",
+      "snapshotAsOf": 9390,
+      "persisted": true
+    },
+    {
+      "id": "run-k-009",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 12001,
+      "completedAt": 12003,
+      "result": "pass",
+      "snapshotAsOf": 12002,
+      "persisted": true
+    },
+    {
+      "id": "run-v-010",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 12994,
+      "completedAt": 13006,
+      "result": "pass",
+      "snapshotAsOf": 10846,
+      "persisted": true
+    },
+    {
+      "id": "run-k-010",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 13470,
+      "completedAt": 13472,
+      "result": "pass",
+      "snapshotAsOf": 13471,
+      "persisted": true
+    },
+    {
+      "id": "run-v-011",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 14440,
+      "completedAt": 14444,
+      "result": "pass",
+      "snapshotAsOf": 12284,
+      "persisted": true
+    },
+    {
+      "id": "run-k-011",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 14886,
+      "completedAt": 14890,
+      "result": "pass",
+      "snapshotAsOf": 14889,
+      "persisted": true
+    },
+    {
+      "id": "run-v-012",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 15851,
+      "completedAt": 15861,
+      "result": "pass",
+      "snapshotAsOf": 13701,
+      "persisted": true
+    },
+    {
+      "id": "run-k-012",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 16348,
+      "completedAt": 16353,
+      "result": "pass",
+      "snapshotAsOf": 16352,
+      "persisted": true
+    },
+    {
+      "id": "run-v-013",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 17303,
+      "completedAt": 17314,
+      "result": "pass",
+      "snapshotAsOf": 15154,
+      "persisted": true
+    },
+    {
+      "id": "run-k-013",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 17762,
+      "completedAt": 17767,
+      "result": "pass",
+      "snapshotAsOf": 17766,
+      "persisted": true
+    },
+    {
+      "id": "run-v-014",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 18760,
+      "completedAt": 18770,
+      "result": "pass",
+      "snapshotAsOf": 16610,
+      "persisted": true
+    },
+    {
+      "id": "run-k-014",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 19219,
+      "completedAt": 19224,
+      "result": "pass",
+      "snapshotAsOf": 19223,
+      "persisted": true
+    },
+    {
+      "id": "run-v-015",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 20171,
+      "completedAt": 20179,
+      "result": "pass",
+      "snapshotAsOf": 18019,
+      "persisted": true
+    },
+    {
+      "id": "run-k-015",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 20666,
+      "completedAt": 20671,
+      "result": "pass",
+      "snapshotAsOf": 20670,
+      "persisted": true
+    },
+    {
+      "id": "run-v-016",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 21619,
+      "completedAt": 21627,
+      "result": "pass",
+      "snapshotAsOf": 19467,
+      "persisted": true
+    },
+    {
+      "id": "run-k-016",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 22108,
+      "completedAt": 22113,
+      "result": "pass",
+      "snapshotAsOf": 22112,
+      "persisted": true
+    },
+    {
+      "id": "run-v-017",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 23060,
+      "completedAt": 23068,
+      "result": "pass",
+      "snapshotAsOf": 20908,
+      "persisted": true
+    },
+    {
+      "id": "run-k-017",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 23549,
+      "completedAt": 23551,
+      "result": "pass",
+      "snapshotAsOf": 23550,
+      "persisted": true
+    },
+    {
+      "id": "run-v-018",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 24503,
+      "completedAt": 24509,
+      "result": "pass",
+      "snapshotAsOf": 22349,
+      "persisted": true
+    },
+    {
+      "id": "run-k-018",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 24986,
+      "completedAt": 24991,
+      "result": "pass",
+      "snapshotAsOf": 24990,
+      "persisted": true
+    },
+    {
+      "id": "run-v-019",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 25943,
+      "completedAt": 25955,
+      "result": "pass",
+      "snapshotAsOf": 23795,
+      "persisted": true
+    },
+    {
+      "id": "run-k-019",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 26420,
+      "completedAt": 26422,
+      "result": "pass",
+      "snapshotAsOf": 26421,
+      "persisted": true
+    },
+    {
+      "id": "run-v-020",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 27392,
+      "completedAt": 27401,
+      "result": "pass",
+      "snapshotAsOf": 25241,
+      "persisted": true
+    },
+    {
+      "id": "run-k-020",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 27846,
+      "completedAt": 27851,
+      "result": "pass",
+      "snapshotAsOf": 27850,
+      "persisted": true
+    },
+    {
+      "id": "run-v-021",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 28820,
+      "completedAt": 28826,
+      "result": "pass",
+      "snapshotAsOf": 26666,
+      "persisted": true
+    },
+    {
+      "id": "run-k-021",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 29280,
+      "completedAt": 29284,
+      "result": "pass",
+      "snapshotAsOf": 29283,
+      "persisted": true
+    },
+    {
+      "id": "run-v-022",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 30275,
+      "completedAt": 30281,
+      "result": "pass",
+      "snapshotAsOf": 28121,
+      "persisted": true
+    },
+    {
+      "id": "run-k-022",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 30744,
+      "completedAt": 30746,
+      "result": "pass",
+      "snapshotAsOf": 30745,
+      "persisted": true
+    },
+    {
+      "id": "run-v-023",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 31702,
+      "completedAt": 31709,
+      "result": "pass",
+      "snapshotAsOf": 29549,
+      "persisted": true
+    },
+    {
+      "id": "run-k-023",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 32186,
+      "completedAt": 32189,
+      "result": "pass",
+      "snapshotAsOf": 32188,
+      "persisted": true
+    },
+    {
+      "id": "run-v-024",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 33160,
+      "completedAt": 33168,
+      "result": "pass",
+      "snapshotAsOf": 31008,
+      "persisted": true
+    },
+    {
+      "id": "run-k-024",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 33602,
+      "completedAt": 33605,
+      "result": "pass",
+      "snapshotAsOf": 33604,
+      "persisted": true
+    },
+    {
+      "id": "run-v-025",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 34570,
+      "completedAt": 34580,
+      "result": "pass",
+      "snapshotAsOf": 32420,
+      "persisted": true
+    },
+    {
+      "id": "run-k-025",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 35064,
+      "completedAt": 35068,
+      "result": "pass",
+      "snapshotAsOf": 35067,
+      "persisted": true
+    },
+    {
+      "id": "run-v-026",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 36018,
+      "completedAt": 36027,
+      "result": "pass",
+      "snapshotAsOf": 33867,
+      "persisted": true
+    },
+    {
+      "id": "run-k-026",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 36500,
+      "completedAt": 36503,
+      "result": "pass",
+      "snapshotAsOf": 36502,
+      "persisted": true
+    },
+    {
+      "id": "run-v-027",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 37455,
+      "completedAt": 37459,
+      "result": "pass",
+      "snapshotAsOf": 35299,
+      "persisted": true
+    },
+    {
+      "id": "run-k-027",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 37950,
+      "completedAt": 37954,
+      "result": "pass",
+      "snapshotAsOf": 37953,
+      "persisted": true
+    },
+    {
+      "id": "run-v-028",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 38893,
+      "completedAt": 38902,
+      "result": "fail",
+      "snapshotAsOf": 36742,
+      "persisted": true
+    },
+    {
+      "id": "run-k-028",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 39389,
+      "completedAt": 39393,
+      "result": "pass",
+      "snapshotAsOf": 39392,
+      "persisted": true
+    },
+    {
+      "id": "run-v-029",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 40347,
+      "completedAt": 40351,
+      "result": "fail",
+      "snapshotAsOf": 38191,
+      "persisted": true
+    },
+    {
+      "id": "run-k-029",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 40822,
+      "completedAt": 40826,
+      "result": "pass",
+      "snapshotAsOf": 40825,
+      "persisted": true
+    },
+    {
+      "id": "run-v-030",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 41783,
+      "completedAt": 41794,
+      "result": "fail",
+      "snapshotAsOf": 39634,
+      "persisted": true
+    },
+    {
+      "id": "run-k-030",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 42242,
+      "completedAt": 42246,
+      "result": "pass",
+      "snapshotAsOf": 42245,
+      "persisted": true
+    },
+    {
+      "id": "run-v-031",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 43223,
+      "completedAt": 43234,
+      "result": "fail",
+      "snapshotAsOf": 41074,
+      "persisted": true
+    },
+    {
+      "id": "run-k-031",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 43698,
+      "completedAt": 43700,
+      "result": "pass",
+      "snapshotAsOf": 43699,
+      "persisted": true
+    },
+    {
+      "id": "run-v-032",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 44667,
+      "completedAt": 44675,
+      "result": "fail",
+      "snapshotAsOf": 42515,
+      "persisted": true
+    },
+    {
+      "id": "run-k-032",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 45129,
+      "completedAt": 45133,
+      "result": "pass",
+      "snapshotAsOf": 45132,
+      "persisted": true
+    },
+    {
+      "id": "run-v-033",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 46118,
+      "completedAt": 46123,
+      "result": "fail",
+      "snapshotAsOf": 43963,
+      "persisted": true
+    },
+    {
+      "id": "run-k-033",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 46576,
+      "completedAt": 46580,
+      "result": "pass",
+      "snapshotAsOf": 46579,
+      "persisted": true
+    },
+    {
+      "id": "run-v-034",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 47534,
+      "completedAt": 47539,
+      "result": "fail",
+      "snapshotAsOf": 45379,
+      "persisted": true
+    },
+    {
+      "id": "run-k-034",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 48025,
+      "completedAt": 48028,
+      "result": "pass",
+      "snapshotAsOf": 48027,
+      "persisted": true
+    },
+    {
+      "id": "run-v-035",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 49000,
+      "completedAt": 49005,
+      "result": "fail",
+      "snapshotAsOf": 46845,
+      "persisted": true
+    },
+    {
+      "id": "run-k-035",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 49465,
+      "completedAt": 49467,
+      "result": "pass",
+      "snapshotAsOf": 49466,
+      "persisted": true
+    },
+    {
+      "id": "run-v-036",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 50419,
+      "completedAt": 50425,
+      "result": "fail",
+      "snapshotAsOf": 48265,
+      "persisted": true
+    },
+    {
+      "id": "run-k-036",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 50908,
+      "completedAt": 50912,
+      "result": "pass",
+      "snapshotAsOf": 50911,
+      "persisted": true
+    },
+    {
+      "id": "run-v-037",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 51862,
+      "completedAt": 51869,
+      "result": "fail",
+      "snapshotAsOf": 49709,
+      "persisted": true
+    },
+    {
+      "id": "run-k-037",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 52347,
+      "completedAt": 52352,
+      "result": "pass",
+      "snapshotAsOf": 52351,
+      "persisted": true
+    },
+    {
+      "id": "run-v-038",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 53303,
+      "completedAt": 53310,
+      "result": "fail",
+      "snapshotAsOf": 51150,
+      "persisted": true
+    },
+    {
+      "id": "run-k-038",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 53788,
+      "completedAt": 53793,
+      "result": "pass",
+      "snapshotAsOf": 53792,
+      "persisted": true
+    },
+    {
+      "id": "run-v-039",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 54755,
+      "completedAt": 54763,
+      "result": "fail",
+      "snapshotAsOf": 52603,
+      "persisted": true
+    },
+    {
+      "id": "run-k-039",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 55211,
+      "completedAt": 55213,
+      "result": "pass",
+      "snapshotAsOf": 55212,
+      "persisted": true
+    },
+    {
+      "id": "run-v-040",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 56174,
+      "completedAt": 56180,
+      "result": "fail",
+      "snapshotAsOf": 54020,
+      "persisted": true
+    },
+    {
+      "id": "run-k-040",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 56667,
+      "completedAt": 56670,
+      "result": "pass",
+      "snapshotAsOf": 56669,
+      "persisted": true
+    },
+    {
+      "id": "run-v-041",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 57618,
+      "completedAt": 57624,
+      "result": "fail",
+      "snapshotAsOf": 55464,
+      "persisted": true
+    },
+    {
+      "id": "run-k-041",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 58083,
+      "completedAt": 58088,
+      "result": "pass",
+      "snapshotAsOf": 58087,
+      "persisted": true
+    },
+    {
+      "id": "run-v-042",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 59051,
+      "completedAt": 59056,
+      "result": "fail",
+      "snapshotAsOf": 56896,
+      "persisted": true
+    },
+    {
+      "id": "run-k-042",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 59541,
+      "completedAt": 59545,
+      "result": "pass",
+      "snapshotAsOf": 59544,
+      "persisted": true
+    },
+    {
+      "id": "run-v-043",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 60514,
+      "completedAt": 60523,
+      "result": "pass",
+      "snapshotAsOf": 58363,
+      "persisted": true
+    },
+    {
+      "id": "run-k-043",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 60986,
+      "completedAt": 60989,
+      "result": "pass",
+      "snapshotAsOf": 60988,
+      "persisted": true
+    },
+    {
+      "id": "run-v-044",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 61950,
+      "completedAt": 61954,
+      "result": "pass",
+      "snapshotAsOf": 59794,
+      "persisted": true
+    },
+    {
+      "id": "run-k-044",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 62426,
+      "completedAt": 62430,
+      "result": "pass",
+      "snapshotAsOf": 62429,
+      "persisted": true
+    },
+    {
+      "id": "run-v-045",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 63387,
+      "completedAt": 63392,
+      "result": "pass",
+      "snapshotAsOf": 61232,
+      "persisted": true
+    },
+    {
+      "id": "run-k-045",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 63852,
+      "completedAt": 63854,
+      "result": "pass",
+      "snapshotAsOf": 63853,
+      "persisted": true
+    },
+    {
+      "id": "run-v-046",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 64837,
+      "completedAt": 64844,
+      "result": "pass",
+      "snapshotAsOf": 62684,
+      "persisted": true
+    },
+    {
+      "id": "run-k-046",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 65303,
+      "completedAt": 65307,
+      "result": "pass",
+      "snapshotAsOf": 65306,
+      "persisted": true
+    },
+    {
+      "id": "run-v-047",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 66270,
+      "completedAt": 66274,
+      "result": "pass",
+      "snapshotAsOf": 64114,
+      "persisted": true
+    },
+    {
+      "id": "run-k-047",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 66747,
+      "completedAt": 66749,
+      "result": "pass",
+      "snapshotAsOf": 66748,
+      "persisted": true
+    },
+    {
+      "id": "run-v-048",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 67698,
+      "completedAt": 67702,
+      "result": "pass",
+      "snapshotAsOf": 65542,
+      "persisted": true
+    },
+    {
+      "id": "run-k-048",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 68188,
+      "completedAt": 68190,
+      "result": "pass",
+      "snapshotAsOf": 68189,
+      "persisted": true
+    },
+    {
+      "id": "run-v-049",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 69150,
+      "completedAt": 69154,
+      "result": "pass",
+      "snapshotAsOf": 66994,
+      "persisted": true
+    },
+    {
+      "id": "run-k-049",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 69615,
+      "completedAt": 69619,
+      "result": "pass",
+      "snapshotAsOf": 69618,
+      "persisted": true
+    },
+    {
+      "id": "run-v-050",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 70581,
+      "completedAt": 70585,
+      "result": "pass",
+      "snapshotAsOf": 68425,
+      "persisted": true
+    },
+    {
+      "id": "run-k-050",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 71068,
+      "completedAt": 71072,
+      "result": "pass",
+      "snapshotAsOf": 71071,
+      "persisted": true
+    },
+    {
+      "id": "run-v-051",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 72030,
+      "completedAt": 72035,
+      "result": "pass",
+      "snapshotAsOf": 69875,
+      "persisted": true
+    },
+    {
+      "id": "run-k-051",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 72485,
+      "completedAt": 72489,
+      "result": "pass",
+      "snapshotAsOf": 72488,
+      "persisted": true
+    },
+    {
+      "id": "run-v-052",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 73465,
+      "completedAt": 73469,
+      "result": "pass",
+      "snapshotAsOf": 71309,
+      "persisted": true
+    },
+    {
+      "id": "run-k-052",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 73936,
+      "completedAt": 73941,
+      "result": "pass",
+      "snapshotAsOf": 73940,
+      "persisted": true
+    },
+    {
+      "id": "run-v-053",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 74909,
+      "completedAt": 74918,
+      "result": "pass",
+      "snapshotAsOf": 72758,
+      "persisted": true
+    },
+    {
+      "id": "run-k-053",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 75381,
+      "completedAt": 75384,
+      "result": "pass",
+      "snapshotAsOf": 75383,
+      "persisted": true
+    },
+    {
+      "id": "run-v-054",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 76344,
+      "completedAt": 76349,
+      "result": "pass",
+      "snapshotAsOf": 74189,
+      "persisted": true
+    },
+    {
+      "id": "run-k-054",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 76820,
+      "completedAt": 76822,
+      "result": "pass",
+      "snapshotAsOf": 76821,
+      "persisted": true
+    },
+    {
+      "id": "run-v-055",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 77791,
+      "completedAt": 77795,
+      "result": "pass",
+      "snapshotAsOf": 75635,
+      "persisted": true
+    },
+    {
+      "id": "run-k-055",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 78246,
+      "completedAt": 78251,
+      "result": "pass",
+      "snapshotAsOf": 78250,
+      "persisted": true
+    },
+    {
+      "id": "run-v-056",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 79221,
+      "completedAt": 79226,
+      "result": "pass",
+      "snapshotAsOf": 77066,
+      "persisted": true
+    },
+    {
+      "id": "run-k-056",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 79691,
+      "completedAt": 79696,
+      "result": "pass",
+      "snapshotAsOf": 79695,
+      "persisted": true
+    },
+    {
+      "id": "run-v-057",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 80665,
+      "completedAt": 80672,
+      "result": "pass",
+      "snapshotAsOf": 78512,
+      "persisted": true
+    },
+    {
+      "id": "run-k-057",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 81133,
+      "completedAt": 81137,
+      "result": "pass",
+      "snapshotAsOf": 81136,
+      "persisted": true
+    },
+    {
+      "id": "run-v-058",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 82107,
+      "completedAt": 82111,
+      "result": "pass",
+      "snapshotAsOf": 79951,
+      "persisted": true
+    },
+    {
+      "id": "run-k-058",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 82570,
+      "completedAt": 82574,
+      "result": "pass",
+      "snapshotAsOf": 82573,
+      "persisted": true
+    },
+    {
+      "id": "run-v-059",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 83548,
+      "completedAt": 83556,
+      "result": "pass",
+      "snapshotAsOf": 81396,
+      "persisted": true
+    },
+    {
+      "id": "run-k-059",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 84001,
+      "completedAt": 84006,
+      "result": "pass",
+      "snapshotAsOf": 84005,
+      "persisted": true
+    },
+    {
+      "id": "run-v-060",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 84997,
+      "completedAt": 85009,
+      "result": "pass",
+      "snapshotAsOf": 82849,
+      "persisted": true
+    },
+    {
+      "id": "run-k-060",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 85451,
+      "completedAt": 85453,
+      "result": "pass",
+      "snapshotAsOf": 85452,
+      "persisted": true
+    },
+    {
+      "id": "run-v-061",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 86410,
+      "completedAt": 86417,
+      "result": "pass",
+      "snapshotAsOf": 84257,
+      "persisted": true
+    },
+    {
+      "id": "run-k-061",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 86910,
+      "completedAt": 86913,
+      "result": "pass",
+      "snapshotAsOf": 86912,
+      "persisted": true
+    },
+    {
+      "id": "run-v-062",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 87856,
+      "completedAt": 87861,
+      "result": "pass",
+      "snapshotAsOf": 85701,
+      "persisted": true
+    },
+    {
+      "id": "run-k-062",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 88320,
+      "completedAt": 88322,
+      "result": "pass",
+      "snapshotAsOf": 88321,
+      "persisted": true
+    },
+    {
+      "id": "run-v-063",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 89304,
+      "completedAt": 89313,
+      "result": "fail",
+      "snapshotAsOf": 87153,
+      "persisted": true
+    },
+    {
+      "id": "run-k-063",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 89783,
+      "completedAt": 89786,
+      "result": "pass",
+      "snapshotAsOf": 89785,
+      "persisted": true
+    },
+    {
+      "id": "run-v-064",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 90746,
+      "completedAt": 90752,
+      "result": "fail",
+      "snapshotAsOf": 88592,
+      "persisted": true
+    },
+    {
+      "id": "run-k-064",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 91223,
+      "completedAt": 91228,
+      "result": "pass",
+      "snapshotAsOf": 91227,
+      "persisted": true
+    },
+    {
+      "id": "run-v-065",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 92189,
+      "completedAt": 92193,
+      "result": "fail",
+      "snapshotAsOf": 90033,
+      "persisted": true
+    },
+    {
+      "id": "run-k-065",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 92642,
+      "completedAt": 92646,
+      "result": "pass",
+      "snapshotAsOf": 92645,
+      "persisted": true
+    },
+    {
+      "id": "run-v-066",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 93620,
+      "completedAt": 93628,
+      "result": "fail",
+      "snapshotAsOf": 91468,
+      "persisted": true
+    },
+    {
+      "id": "run-k-066",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 94090,
+      "completedAt": 94095,
+      "result": "pass",
+      "snapshotAsOf": 94094,
+      "persisted": true
+    },
+    {
+      "id": "run-v-067",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 95077,
+      "completedAt": 95082,
+      "result": "fail",
+      "snapshotAsOf": 92922,
+      "persisted": true
+    },
+    {
+      "id": "run-k-067",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 95533,
+      "completedAt": 95537,
+      "result": "pass",
+      "snapshotAsOf": 95536,
+      "persisted": true
+    },
+    {
+      "id": "run-v-068",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 96497,
+      "completedAt": 96507,
+      "result": "fail",
+      "snapshotAsOf": 94347,
+      "persisted": true
+    },
+    {
+      "id": "run-k-068",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 96983,
+      "completedAt": 96985,
+      "result": "pass",
+      "snapshotAsOf": 96984,
+      "persisted": true
+    },
+    {
+      "id": "run-v-069",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 97955,
+      "completedAt": 97963,
+      "result": "fail",
+      "snapshotAsOf": 95803,
+      "persisted": true
+    },
+    {
+      "id": "run-k-069",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 98402,
+      "completedAt": 98407,
+      "result": "pass",
+      "snapshotAsOf": 98406,
+      "persisted": true
+    },
+    {
+      "id": "run-v-070",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 99393,
+      "completedAt": 99404,
+      "result": "fail",
+      "snapshotAsOf": 97244,
+      "persisted": true
+    },
+    {
+      "id": "run-k-070",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 99851,
+      "completedAt": 99854,
+      "result": "pass",
+      "snapshotAsOf": 99853,
+      "persisted": true
+    },
+    {
+      "id": "run-v-071",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 100827,
+      "completedAt": 100833,
+      "result": "fail",
+      "snapshotAsOf": 98673,
+      "persisted": true
+    },
+    {
+      "id": "run-k-071",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 101289,
+      "completedAt": 101293,
+      "result": "pass",
+      "snapshotAsOf": 101292,
+      "persisted": true
+    },
+    {
+      "id": "run-v-072",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 102253,
+      "completedAt": 102258,
+      "result": "fail",
+      "snapshotAsOf": 100098,
+      "persisted": true
+    },
+    {
+      "id": "run-k-072",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 102731,
+      "completedAt": 102734,
+      "result": "pass",
+      "snapshotAsOf": 102733,
+      "persisted": true
+    },
+    {
+      "id": "run-v-073",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 103690,
+      "completedAt": 103699,
+      "result": "fail",
+      "snapshotAsOf": 101539,
+      "persisted": true
+    },
+    {
+      "id": "run-k-073",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 104168,
+      "completedAt": 104170,
+      "result": "pass",
+      "snapshotAsOf": 104169,
+      "persisted": true
+    },
+    {
+      "id": "run-v-074",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 105154,
+      "completedAt": 105166,
+      "result": "fail",
+      "snapshotAsOf": 103006,
+      "persisted": true
+    },
+    {
+      "id": "run-k-074",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 105603,
+      "completedAt": 105608,
+      "result": "pass",
+      "snapshotAsOf": 105607,
+      "persisted": true
+    },
+    {
+      "id": "run-v-075",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 106574,
+      "completedAt": 106578,
+      "result": "fail",
+      "snapshotAsOf": 104418,
+      "persisted": true
+    },
+    {
+      "id": "run-k-075",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 107047,
+      "completedAt": 107052,
+      "result": "pass",
+      "snapshotAsOf": 107051,
+      "persisted": true
+    },
+    {
+      "id": "run-v-076",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 108028,
+      "completedAt": 108034,
+      "result": "fail",
+      "snapshotAsOf": 105874,
+      "persisted": true
+    },
+    {
+      "id": "run-k-076",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 108497,
+      "completedAt": 108499,
+      "result": "pass",
+      "snapshotAsOf": 108498,
+      "persisted": true
+    },
+    {
+      "id": "run-v-077",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 109465,
+      "completedAt": 109473,
+      "result": "fail",
+      "snapshotAsOf": 107313,
+      "persisted": true
+    },
+    {
+      "id": "run-k-077",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 109937,
+      "completedAt": 109940,
+      "result": "pass",
+      "snapshotAsOf": 109939,
+      "persisted": true
+    },
+    {
+      "id": "run-v-078",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 110914,
+      "completedAt": 110920,
+      "result": "pass",
+      "snapshotAsOf": 108760,
+      "persisted": true
+    },
+    {
+      "id": "run-k-078",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 111373,
+      "completedAt": 111378,
+      "result": "pass",
+      "snapshotAsOf": 111377,
+      "persisted": true
+    },
+    {
+      "id": "run-v-079",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 112332,
+      "completedAt": 112336,
+      "result": "pass",
+      "snapshotAsOf": 110176,
+      "persisted": true
+    },
+    {
+      "id": "run-k-079",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 112809,
+      "completedAt": 112813,
+      "result": "pass",
+      "snapshotAsOf": 112812,
+      "persisted": true
+    },
+    {
+      "id": "run-v-080",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 113777,
+      "completedAt": 113784,
+      "result": "pass",
+      "snapshotAsOf": 111624,
+      "persisted": true
+    },
+    {
+      "id": "run-k-080",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 114242,
+      "completedAt": 114247,
+      "result": "pass",
+      "snapshotAsOf": 114246,
+      "persisted": true
+    },
+    {
+      "id": "run-v-081",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 115222,
+      "completedAt": 115233,
+      "result": "pass",
+      "snapshotAsOf": 113073,
+      "persisted": true
+    },
+    {
+      "id": "run-k-081",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 115689,
+      "completedAt": 115694,
+      "result": "pass",
+      "snapshotAsOf": 115693,
+      "persisted": true
+    },
+    {
+      "id": "run-v-082",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 116657,
+      "completedAt": 116668,
+      "result": "pass",
+      "snapshotAsOf": 114508,
+      "persisted": true
+    },
+    {
+      "id": "run-k-082",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 117134,
+      "completedAt": 117136,
+      "result": "pass",
+      "snapshotAsOf": 117135,
+      "persisted": true
+    },
+    {
+      "id": "run-v-083",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 118100,
+      "completedAt": 118109,
+      "result": "pass",
+      "snapshotAsOf": 115949,
+      "persisted": true
+    },
+    {
+      "id": "run-k-083",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 118585,
+      "completedAt": 118589,
+      "result": "pass",
+      "snapshotAsOf": 118588,
+      "persisted": true
+    },
+    {
+      "id": "run-v-084",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 119547,
+      "completedAt": 119555,
+      "result": "pass",
+      "snapshotAsOf": 117395,
+      "persisted": true
+    },
+    {
+      "id": "run-k-084",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 120004,
+      "completedAt": 120008,
+      "result": "pass",
+      "snapshotAsOf": 120007,
+      "persisted": true
+    },
+    {
+      "id": "run-v-085",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 120973,
+      "completedAt": 120985,
+      "result": "pass",
+      "snapshotAsOf": 118825,
+      "persisted": true
+    },
+    {
+      "id": "run-k-085",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 121468,
+      "completedAt": 121472,
+      "result": "pass",
+      "snapshotAsOf": 121471,
+      "persisted": true
+    },
+    {
+      "id": "run-v-086",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 122422,
+      "completedAt": 122431,
+      "result": "pass",
+      "snapshotAsOf": 120271,
+      "persisted": true
+    },
+    {
+      "id": "run-k-086",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 122907,
+      "completedAt": 122911,
+      "result": "pass",
+      "snapshotAsOf": 122910,
+      "persisted": true
+    },
+    {
+      "id": "run-v-087",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 123870,
+      "completedAt": 123877,
+      "result": "pass",
+      "snapshotAsOf": 121717,
+      "persisted": true
+    },
+    {
+      "id": "run-k-087",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 124328,
+      "completedAt": 124331,
+      "result": "pass",
+      "snapshotAsOf": 124330,
+      "persisted": true
+    },
+    {
+      "id": "run-v-088",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 125310,
+      "completedAt": 125314,
+      "result": "pass",
+      "snapshotAsOf": 123154,
+      "persisted": true
+    },
+    {
+      "id": "run-k-088",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 125764,
+      "completedAt": 125769,
+      "result": "pass",
+      "snapshotAsOf": 125768,
+      "persisted": true
+    },
+    {
+      "id": "run-v-089",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 126736,
+      "completedAt": 126740,
+      "result": "pass",
+      "snapshotAsOf": 124580,
+      "persisted": true
+    },
+    {
+      "id": "run-k-089",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 127215,
+      "completedAt": 127219,
+      "result": "pass",
+      "snapshotAsOf": 127218,
+      "persisted": true
+    },
+    {
+      "id": "run-v-090",
+      "checkId": "V",
+      "provider": "scanner",
+      "startedAt": 128171,
+      "completedAt": 128179,
+      "result": "pass",
+      "snapshotAsOf": 126019,
+      "persisted": true
+    },
+    {
+      "id": "run-k-090",
+      "checkId": "K",
+      "provider": "github",
+      "startedAt": 128650,
+      "completedAt": 128653,
+      "result": "pass",
+      "snapshotAsOf": 128652,
+      "persisted": true
+    }
+  ],
+  "apiLog": [
+    {
+      "checkRunId": "run-v-001",
+      "completedAt": 30,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-k-001",
+      "completedAt": 499,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-002",
+      "completedAt": 1480,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-k-002",
+      "completedAt": 1934,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-003",
+      "completedAt": 2904,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-k-003",
+      "completedAt": 3371,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-004",
+      "completedAt": 4362,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-k-004",
+      "completedAt": 4808,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-005",
+      "completedAt": 5791,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-k-005",
+      "completedAt": 6246,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-006",
+      "completedAt": 7223,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-k-006",
+      "completedAt": 7687,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-007",
+      "completedAt": 8683,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-k-007",
+      "completedAt": 9142,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-008",
+      "completedAt": 10109,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-k-008",
+      "completedAt": 10573,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-009",
+      "completedAt": 11550,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-k-009",
+      "completedAt": 12003,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-010",
+      "completedAt": 13006,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-k-010",
+      "completedAt": 13472,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-011",
+      "completedAt": 14444,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-k-011",
+      "completedAt": 14890,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-012",
+      "completedAt": 15861,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-k-012",
+      "completedAt": 16353,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-013",
+      "completedAt": 17314,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-k-013",
+      "completedAt": 17767,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-014",
+      "completedAt": 18770,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-k-014",
+      "completedAt": 19224,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-015",
+      "completedAt": 20179,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-k-015",
+      "completedAt": 20671,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-016",
+      "completedAt": 21627,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-k-016",
+      "completedAt": 22113,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-017",
+      "completedAt": 23068,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-k-017",
+      "completedAt": 23551,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-018",
+      "completedAt": 24509,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-k-018",
+      "completedAt": 24991,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-019",
+      "completedAt": 25955,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-k-019",
+      "completedAt": 26422,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-020",
+      "completedAt": 27401,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-k-020",
+      "completedAt": 27851,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-021",
+      "completedAt": 28826,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-k-021",
+      "completedAt": 29284,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-022",
+      "completedAt": 30281,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-k-022",
+      "completedAt": 30746,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-023",
+      "completedAt": 31709,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-k-023",
+      "completedAt": 32189,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-024",
+      "completedAt": 33168,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-k-024",
+      "completedAt": 33605,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-025",
+      "completedAt": 34580,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-k-025",
+      "completedAt": 35068,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-026",
+      "completedAt": 36027,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-k-026",
+      "completedAt": 36503,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-027",
+      "completedAt": 37459,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-k-027",
+      "completedAt": 37954,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-028",
+      "completedAt": 38902,
+      "result": "fail"
+    },
+    {
+      "checkRunId": "run-k-028",
+      "completedAt": 39393,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-029",
+      "completedAt": 40351,
+      "result": "fail"
+    },
+    {
+      "checkRunId": "run-k-029",
+      "completedAt": 40826,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-030",
+      "completedAt": 41794,
+      "result": "fail"
+    },
+    {
+      "checkRunId": "run-k-030",
+      "completedAt": 42246,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-031",
+      "completedAt": 43234,
+      "result": "fail"
+    },
+    {
+      "checkRunId": "run-k-031",
+      "completedAt": 43700,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-032",
+      "completedAt": 44675,
+      "result": "fail"
+    },
+    {
+      "checkRunId": "run-k-032",
+      "completedAt": 45133,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-033",
+      "completedAt": 46123,
+      "result": "fail"
+    },
+    {
+      "checkRunId": "run-k-033",
+      "completedAt": 46580,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-034",
+      "completedAt": 47539,
+      "result": "fail"
+    },
+    {
+      "checkRunId": "run-k-034",
+      "completedAt": 48028,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-035",
+      "completedAt": 49005,
+      "result": "fail"
+    },
+    {
+      "checkRunId": "run-k-035",
+      "completedAt": 49467,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-036",
+      "completedAt": 50425,
+      "result": "fail"
+    },
+    {
+      "checkRunId": "run-k-036",
+      "completedAt": 50912,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-037",
+      "completedAt": 51869,
+      "result": "fail"
+    },
+    {
+      "checkRunId": "run-k-037",
+      "completedAt": 52352,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-038",
+      "completedAt": 53310,
+      "result": "fail"
+    },
+    {
+      "checkRunId": "run-k-038",
+      "completedAt": 53793,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-039",
+      "completedAt": 54763,
+      "result": "fail"
+    },
+    {
+      "checkRunId": "run-k-039",
+      "completedAt": 55213,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-040",
+      "completedAt": 56180,
+      "result": "fail"
+    },
+    {
+      "checkRunId": "run-k-040",
+      "completedAt": 56670,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-041",
+      "completedAt": 57624,
+      "result": "fail"
+    },
+    {
+      "checkRunId": "run-k-041",
+      "completedAt": 58088,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-042",
+      "completedAt": 59056,
+      "result": "fail"
+    },
+    {
+      "checkRunId": "run-k-042",
+      "completedAt": 59545,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-043",
+      "completedAt": 60523,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-k-043",
+      "completedAt": 60989,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-044",
+      "completedAt": 61954,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-k-044",
+      "completedAt": 62430,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-045",
+      "completedAt": 63392,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-k-045",
+      "completedAt": 63854,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-046",
+      "completedAt": 64844,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-k-046",
+      "completedAt": 65307,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-047",
+      "completedAt": 66274,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-k-047",
+      "completedAt": 66749,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-048",
+      "completedAt": 67702,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-k-048",
+      "completedAt": 68190,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-049",
+      "completedAt": 69154,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-k-049",
+      "completedAt": 69619,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-050",
+      "completedAt": 70585,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-k-050",
+      "completedAt": 71072,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-051",
+      "completedAt": 72035,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-k-051",
+      "completedAt": 72489,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-052",
+      "completedAt": 73469,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-k-052",
+      "completedAt": 73941,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-053",
+      "completedAt": 74918,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-k-053",
+      "completedAt": 75384,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-054",
+      "completedAt": 76349,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-k-054",
+      "completedAt": 76822,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-055",
+      "completedAt": 77795,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-k-055",
+      "completedAt": 78251,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-056",
+      "completedAt": 79226,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-k-056",
+      "completedAt": 79696,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-057",
+      "completedAt": 80672,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-k-057",
+      "completedAt": 81137,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-058",
+      "completedAt": 82111,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-k-058",
+      "completedAt": 82574,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-059",
+      "completedAt": 83556,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-k-059",
+      "completedAt": 84006,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-060",
+      "completedAt": 85009,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-k-060",
+      "completedAt": 85453,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-061",
+      "completedAt": 86417,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-k-061",
+      "completedAt": 86913,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-062",
+      "completedAt": 87861,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-k-062",
+      "completedAt": 88322,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-063",
+      "completedAt": 89313,
+      "result": "fail"
+    },
+    {
+      "checkRunId": "run-k-063",
+      "completedAt": 89786,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-064",
+      "completedAt": 90752,
+      "result": "fail"
+    },
+    {
+      "checkRunId": "run-k-064",
+      "completedAt": 91228,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-065",
+      "completedAt": 92193,
+      "result": "fail"
+    },
+    {
+      "checkRunId": "run-k-065",
+      "completedAt": 92646,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-066",
+      "completedAt": 93628,
+      "result": "fail"
+    },
+    {
+      "checkRunId": "run-k-066",
+      "completedAt": 94095,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-067",
+      "completedAt": 95082,
+      "result": "fail"
+    },
+    {
+      "checkRunId": "run-k-067",
+      "completedAt": 95537,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-068",
+      "completedAt": 96507,
+      "result": "fail"
+    },
+    {
+      "checkRunId": "run-k-068",
+      "completedAt": 96985,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-069",
+      "completedAt": 97963,
+      "result": "fail"
+    },
+    {
+      "checkRunId": "run-k-069",
+      "completedAt": 98407,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-070",
+      "completedAt": 99404,
+      "result": "fail"
+    },
+    {
+      "checkRunId": "run-k-070",
+      "completedAt": 99854,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-071",
+      "completedAt": 100833,
+      "result": "fail"
+    },
+    {
+      "checkRunId": "run-k-071",
+      "completedAt": 101293,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-072",
+      "completedAt": 102258,
+      "result": "fail"
+    },
+    {
+      "checkRunId": "run-k-072",
+      "completedAt": 102734,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-073",
+      "completedAt": 103699,
+      "result": "fail"
+    },
+    {
+      "checkRunId": "run-k-073",
+      "completedAt": 104170,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-074",
+      "completedAt": 105166,
+      "result": "fail"
+    },
+    {
+      "checkRunId": "run-k-074",
+      "completedAt": 105608,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-075",
+      "completedAt": 106578,
+      "result": "fail"
+    },
+    {
+      "checkRunId": "run-k-075",
+      "completedAt": 107052,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-076",
+      "completedAt": 108034,
+      "result": "fail"
+    },
+    {
+      "checkRunId": "run-k-076",
+      "completedAt": 108499,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-077",
+      "completedAt": 109473,
+      "result": "fail"
+    },
+    {
+      "checkRunId": "run-k-077",
+      "completedAt": 109940,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-078",
+      "completedAt": 110920,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-k-078",
+      "completedAt": 111378,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-079",
+      "completedAt": 112336,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-k-079",
+      "completedAt": 112813,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-080",
+      "completedAt": 113784,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-k-080",
+      "completedAt": 114247,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-081",
+      "completedAt": 115233,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-k-081",
+      "completedAt": 115694,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-082",
+      "completedAt": 116668,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-k-082",
+      "completedAt": 117136,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-083",
+      "completedAt": 118109,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-k-083",
+      "completedAt": 118589,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-084",
+      "completedAt": 119555,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-k-084",
+      "completedAt": 120008,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-085",
+      "completedAt": 120985,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-k-085",
+      "completedAt": 121472,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-086",
+      "completedAt": 122431,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-k-086",
+      "completedAt": 122911,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-087",
+      "completedAt": 123877,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-k-087",
+      "completedAt": 124331,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-088",
+      "completedAt": 125314,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-k-088",
+      "completedAt": 125769,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-089",
+      "completedAt": 126740,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-k-089",
+      "completedAt": 127219,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-v-090",
+      "completedAt": 128179,
+      "result": "pass"
+    },
+    {
+      "checkRunId": "run-k-090",
+      "completedAt": 128653,
+      "result": "pass"
+    }
+  ]
+}
